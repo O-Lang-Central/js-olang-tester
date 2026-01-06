@@ -8,6 +8,9 @@ on:
 jobs:
   certify:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 👈 Required to allow git push back to the repo
+
     outputs:
       status: ${{ steps.set-status.outputs.status }}
 
@@ -82,4 +85,4 @@ jobs:
           git config --global user.email "ci@olang.org"
           git add badges/certified.svg
           git commit -m "Update resolver certification badge [skip ci]" || echo "No changes to commit"
-          git push origin main
+          git push
