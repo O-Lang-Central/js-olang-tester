@@ -1,0 +1,79 @@
+{
+  "test_id": "R-003-failure-modes",
+  "protocol_version": "1.0",
+  "category": "resolver",
+  "description": "Tests handling of resolver failures, missing resolvers, and runtime errors.",
+  "spec_ref": [
+    "§4.4 Resolver Failure Modes",
+    "§3.2 Step Parsing",
+    "§5.1 Error Handling"
+  ],
+  "fixtures": {
+    "inputs": [
+      {
+        "workflow": "R-003-failure-modes/workflow.ol",
+        "values": {
+          "userInput": "test input"
+        }
+      }
+    ]
+  },
+  "assertions": [
+    {
+      "id": "reliable_step_success",
+      "type": "output_equals",
+      "path": "steps[0].type",
+      "expected": "ask",
+      "severity": "fatal",
+      "description": "Step 1 should be parsed as an 'ask' resolver step"
+    },
+    {
+      "id": "reliable_step_saveas",
+      "type": "output_equals",
+      "path": "steps[0].saveAs",
+      "expected": "reliableResult",
+      "severity": "fatal",
+      "description": "Step 1 saveAs must be correctly normalized"
+    },
+    {
+      "id": "unstable_step_parsed",
+      "type": "output_equals",
+      "path": "steps[1].type",
+      "expected": "ask",
+      "severity": "fatal",
+      "description": "Step 2 should be parsed as an 'ask' resolver step"
+    },
+    {
+      "id": "unstable_step_saveas",
+      "type": "output_equals",
+      "path": "steps[1].saveAs",
+      "expected": "unstableResult",
+      "severity": "fatal",
+      "description": "Step 2 saveAs must be correctly normalized"
+    },
+    {
+      "id": "workflow_return_values",
+      "type": "output_equals",
+      "path": "returnValues",
+      "expected": ["reliableResult", "unstableResult"],
+      "severity": "fatal",
+      "description": "Return statement must list all resolver outputs"
+    },
+    {
+      "id": "simulate_failure_error",
+      "type": "error_contains",
+      "path": "errors",
+      "expected": "UnstableResolver failed to respond",
+      "severity": "fatal",
+      "description": "Workflow must surface errors from failing resolvers"
+    },
+    {
+      "id": "simulate_missing_resolver",
+      "type": "error_contains",
+      "path": "errors",
+      "expected": "Resolver NotFound: MissingResolver",
+      "severity": "fatal",
+      "description": "Workflow must handle missing resolvers gracefully"
+    }
+  ]
+}

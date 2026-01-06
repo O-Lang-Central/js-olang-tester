@@ -1,0 +1,53 @@
+{
+  "test_id": "R-001-allowlist",
+  "protocol_version": "1.0",
+  "category": "resolver",
+  "description": "Tests that the parser correctly captures allowed resolvers and normalizes their names.",
+  "spec_ref": [
+    "§4.2 Allowed Resolvers",
+    "§3.1 Workflow Parsing",
+    "§2.3 Symbol Normalization"
+  ],
+  "fixtures": {
+    "inputs": [
+      {
+        "workflow": "R-001-allowlist/workflow.ol",
+        "values": {}
+      }
+    ]
+  },
+  "assertions": [
+    {
+      "id": "allowed_resolvers_listed",
+      "type": "output_equals",
+      "path": "allowedResolvers",
+      "expected": ["SimpleResolver", "AdvancedResolver"],
+      "severity": "fatal",
+      "description": "Parser should capture all allowed resolvers listed in the workflow"
+    },
+    {
+      "id": "allowed_resolvers_normalized",
+      "type": "output_equals",
+      "path": "allowedResolvers",
+      "expected": ["SimpleResolver", "AdvancedResolver"],
+      "severity": "fatal",
+      "description": "Resolver names should be normalized (no spaces or invalid characters)"
+    },
+    {
+      "id": "workflow_name_present",
+      "type": "output_equals",
+      "path": "name",
+      "expected": "TestResolverAllowlist",
+      "severity": "fatal",
+      "description": "Workflow name should be parsed correctly"
+    },
+    {
+      "id": "no_parse_warnings",
+      "type": "status_equals",
+      "path": "__warnings.length",
+      "expected": 0,
+      "severity": "warning",
+      "description": "Parser should not generate warnings for a valid allowed resolvers list"
+    }
+  ]
+}

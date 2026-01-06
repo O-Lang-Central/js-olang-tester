@@ -1,0 +1,25 @@
+{
+  "name": "@olang/resolver-tests",
+  "version": "1.0.0",
+  "description": "Official O-Lang Resolver Test Harness — locked single entrypoint",
+  "main": "run.js",
+  "type": "module",
+  "scripts": {
+    "test": "node run.js"
+  },
+  "bin": {
+    "olang-resolver-test": "run.js"
+  },
+  "keywords": [
+    "olang",
+    "resolver",
+    "test",
+    "harness",
+    "locked-entrypoint"
+  ],
+  "author": "Your Name <you@example.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "fs-extra": "^11.1.1"
+  }
+}

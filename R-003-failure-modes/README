@@ -1,0 +1,27 @@
+# R-003 Failure Modes Resolver Test
+
+**Purpose:**  
+This test validates that resolver failures, missing resolvers, and runtime errors are correctly handled and surfaced by the parser/runtime.
+
+**Workflow:**  
+- Workflow Name: `TestResolverFailureModes`
+- Parameters: `userInput`
+- Allowed Resolvers:
+  - `ReliableResolver`
+  - `UnstableResolver`
+- Steps:
+  1. `Ask ReliableResolver` → `saveAs: reliableResult`
+  2. `Ask UnstableResolver` → `saveAs: unstableResult`
+- Return Values: `reliableResult, unstableResult`
+
+**Assertions:**  
+1. Steps 1 & 2 are correctly parsed as `ask` resolver steps.  
+2. `saveAs` values are normalized.  
+3. Return statement lists all resolver outputs.  
+4. Errors from failing resolvers (e.g., `UnstableResolver`) are surfaced.  
+5. Missing resolvers (e.g., `MissingResolver`) trigger proper errors.
+
+**Spec References:**  
+- §4.4 Resolver Failure Modes  
+- §3.2 Step Parsing  
+- §5.1 Error Handling
