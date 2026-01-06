@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Official O-Lang Resolver Test Harness — locked single entrypoint",
   "main": "run.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "node run.js"
   },
@@ -17,7 +17,7 @@
     "harness",
     "locked-entrypoint"
   ],
-  "author": "Your Name <you@example.com>",
+  "author": "O-Lang Team",
   "license": "MIT",
   "devDependencies": {
     "fs-extra": "^11.1.1"
