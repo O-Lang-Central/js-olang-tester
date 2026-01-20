@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="28">
+  <rect rx="4" width="160" height="28" fill="#2d2d2d"/>
+  <rect rx="4" x="80" width="80" height="28" fill="#4cbb17"/>
+  <text x="40" y="18" fill="#fff" font-size="13" font-family="Arial" text-anchor="middle">O-lang</text>
+  <text x="120" y="18" fill="#fff" font-size="13" font-family="Arial" text-anchor="middle">CERTIFIED</text>
+</svg>

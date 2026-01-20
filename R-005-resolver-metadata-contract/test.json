@@ -11,7 +11,7 @@
   "fixtures": {
     "inputs": [
       {
-        "resolver_contract": "R-005-resolver-metadata-contract/resolver.ol"
+        "resolver_contract": "resolver.js"
       }
     ]
   },

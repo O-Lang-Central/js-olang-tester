@@ -11,7 +11,7 @@
   "fixtures": {
     "inputs": [
       {
-        "workflow": "R-001-allowlist/workflow.ol",
+        "workflow": "workflow.ol",
         "values": {}
       }
     ]

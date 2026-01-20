@@ -11,7 +11,7 @@
   "fixtures": {
     "inputs": [
       {
-        "workflow": "R-002-io-contract/workflow.ol",
+        "workflow": "workflow.ol",
         "values": {
           "userInput": "42"
         }

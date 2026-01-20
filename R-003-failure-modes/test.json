@@ -11,7 +11,7 @@
   "fixtures": {
     "inputs": [
       {
-        "workflow": "R-003-failure-modes/workflow.ol",
+        "workflow": "workflow.ol",
         "values": {
           "userInput": "someInput"
         }
@@ -61,14 +61,8 @@
       "type": "step_failure_policies",
       "stepIndex": 1,
       "expected": {
-        "TIMEOUT": {
-          "action": "retry",
-          "count": 2
-        },
-        "NETWORK_ERROR": {
-          "action": "fail",
-          "count": 0
-        }
+        "TIMEOUT": { "action": "retry", "count": 2 },
+        "NETWORK_ERROR": { "action": "fail", "count": 0 }
       },
       "severity": "fatal",
       "description": "Failure modes and retry counts must be parsed"

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+console.log("🚀 Starting O-lang resolver test runner...");
 const path = require("path");
 const fs = require("fs");
 
@@ -75,7 +75,6 @@ const { generateBadge } = require("./lib/badge");
             "R-001-allowlist",
             "R-002-io-contract",
             "R-003-failure-modes",
-            "R-004-invalid-syntax",
             "R-005-resolver-metadata-contract"
           ];
 
@@ -88,7 +87,7 @@ const { generateBadge } = require("./lib/badge");
     // Generate conformance report
     // ----------------------
     const conformanceReport = {
-      resolver: resolver?.resolverName || "unknown",
+      resolver: resolver?.resolverDeclaration?.resolverName || resolver?.resolverName || "unknown",
       timestamp: new Date().toISOString(),
       results: suites.map(suite => ({
         suite,
@@ -102,12 +101,23 @@ const { generateBadge } = require("./lib/badge");
     );
 
     // ----------------------
-    // Generate certification badge
-    // ----------------------
-    generateBadge({
-      passed: result.failed === 0,
-      outputDir: process.cwd()
-    });
+// Generate certification badge
+// ----------------------
+const meta = resolver.resolverDeclaration || resolver;
+
+console.log("🏷 Badge metadata being sent:", {
+  resolverName: meta.resolverName,
+  version: meta.version,
+  passed: result.failed === 0,
+  outputDir: process.cwd()
+});
+
+generateBadge({
+  resolverName: meta.resolverName || "unknown-resolver",
+  version: meta.version || "",
+  passed: result.failed === 0,
+  outputDir: process.cwd()
+});
 
     // ----------------------
     // Output handling

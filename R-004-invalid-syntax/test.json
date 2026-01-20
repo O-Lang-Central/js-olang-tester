@@ -11,7 +11,7 @@
   "fixtures": {
     "inputs": [
       {
-        "workflow": "R-004-invalid-syntax/workflow.ol",
+        "workflow": "workflow.ol",
         "values": {}
       }
     ]
