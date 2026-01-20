@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="370" height="20">
+  <rect width="370" height="20" fill="green" rx="3" ry="3"/>
+  <text x="185" y="14"
+        fill="#fff"
+        font-family="Verdana"
+        font-size="12"
+        text-anchor="middle">
+    O-lang | unknown-resolver — Certified (2026-01-20)
+  </text>
+</svg>

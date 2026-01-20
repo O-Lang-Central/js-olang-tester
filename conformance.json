@@ -1,6 +1,6 @@
 {
-  "resolver": "notify-telegram",
-  "timestamp": "2026-01-20T13:48:24.716Z",
+  "resolver": "unknown",
+  "timestamp": "2026-01-20T15:05:20.396Z",
   "results": [
     {
       "suite": "R-005-resolver-metadata-contract",
