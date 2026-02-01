@@ -1,10 +1,38 @@
 {
   "resolver": "unknown",
-  "timestamp": "2026-01-20T15:05:20.396Z",
+  "timestamp": "2026-02-01T06:27:08.331Z",
   "results": [
     {
       "suite": "R-005-resolver-metadata-contract",
-      "status": "pass"
+      "status": "fail"
+    },
+    {
+      "suite": "R-006-resolver-runtime-shape",
+      "status": "fail"
+    },
+    {
+      "suite": "R-007-resolver-failure-contract",
+      "status": "fail"
+    },
+    {
+      "suite": "R-008-resolver-input-validation",
+      "status": "fail"
+    },
+    {
+      "suite": "R-009-resolver-retry-semantics",
+      "status": "fail"
+    },
+    {
+      "suite": "R-010-resolver-output-contract",
+      "status": "fail"
+    },
+    {
+      "suite": "R-011-resolver-determinism",
+      "status": "fail"
+    },
+    {
+      "suite": "R-012-resolver-side-effects",
+      "status": "fail"
     }
   ]
 }

@@ -1,10 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="370" height="20">
-  <rect width="370" height="20" fill="green" rx="3" ry="3"/>
-  <text x="185" y="14"
+<svg xmlns="http://www.w3.org/2000/svg" width="332" height="20">
+  <!-- Left segment: O-lang (purple) -->
+  <rect x="0" y="0" width="54" height="20" fill="#8A2BE2" rx="3" ry="3"/>
+  <text x="27" y="14"
         fill="#fff"
-        font-family="Verdana"
-        font-size="12"
+        font-family="Verdana, DejaVu Sans, sans-serif"
+        font-size="11"
+        font-weight="bold"
         text-anchor="middle">
-    O-lang | unknown-resolver — Certified (2026-01-20)
+    O-lang
+  </text>
+
+  <!-- Right segment: status info (green/red) -->
+  <rect x="54" y="0" width="278" height="20" fill="#F44336" rx="3" ry="3"/>
+  <text x="193" y="14"
+        fill="#fff"
+        font-family="Verdana, DejaVu Sans, sans-serif"
+        font-size="11"
+        text-anchor="middle">
+    unknown-resolver — Failed (2026-02-01)
   </text>
 </svg>
