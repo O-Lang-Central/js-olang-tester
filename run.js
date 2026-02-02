@@ -79,7 +79,8 @@ const { generateBadge } = require("./lib/badge");
         "R-009-resolver-retry-semantics",
         "R-010-resolver-output-contract",
         "R-011-resolver-determinism",
-        "R-012-resolver-side-effects"
+        "R-012-resolver-side-effects",
+        "R-013-resolver-kernel-bypass"
           ];
 
     const result = await runAllTests({

@@ -1,0 +1,33 @@
+{
+  "test_id": "R-013-resolver-kernel-bypass",
+  "name": "Resolver Kernel Bypass Prevention",
+  "description": "Ensures resolvers never bypass kernel mediation or hallucinate missing data",
+  "category": "resolver-runtime",
+  "fixtures": {
+    "inputs": [
+      {
+        "invoke": "__USE_RESOLVER_EXAMPLE_ACTION__"
+      }
+    ]
+  },
+  "assertions": [
+    {
+      "id": "blocks_unresolved_variables",
+      "type": "blocks_unresolved_variables",
+      "severity": "fatal",
+      "description": "Resolver must reject prompts with unresolved placeholders"
+    },
+    {
+      "id": "no_direct_prompt_parsing",
+      "type": "no_direct_prompt_parsing",
+      "severity": "fatal",
+      "description": "Resolver must not parse prompts directly for variable extraction"
+    },
+    {
+      "id": "no_default_values",
+      "type": "no_default_values",
+      "severity": "fatal",
+      "description": "Resolver must never default missing values to 0, empty string, etc."
+    }
+  ]
+}
