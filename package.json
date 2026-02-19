@@ -1,6 +1,6 @@
 {
   "name": "@o-lang/resolver-tests",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Official O-Lang Resolver Test Harness — locked single entrypoint",
   "main": "run.js",
   "type": "commonjs",
