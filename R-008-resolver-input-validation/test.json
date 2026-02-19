@@ -7,7 +7,7 @@
   "fixtures": {
     "inputs": [
       {
-        "invoke": {}
+        "invoke": null
       }
     ]
   },
