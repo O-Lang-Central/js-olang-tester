@@ -1,5 +1,5 @@
 {
-  "name": "@o-lang/resolver-tests",
+  "name": "@o-lang/js-olang-tester",
   "version": "1.0.11",
   "description": "Official O-Lang Resolver Test Harness — locked single entrypoint",
   "main": "run.js",
